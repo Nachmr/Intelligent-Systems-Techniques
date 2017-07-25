@@ -1,0 +1,48 @@
+(define (problem RDistribuye-1)
+	(:domain RobotDistribuidor)
+	(:objects
+		r1 r2 - robot
+		p1 p2 p3 p4 p5 p6 p7 - paquete
+		hab0 hab1 hab2 hab3 hab4 - habitacion
+		f0 f1 f2 - fuente
+	)
+	(:init
+		(at r1 hab0)
+		(at r2 hab0)
+		(at p1 hab0)
+		(at p2 hab0)
+		(at p3 hab0)
+		(at p4 hab0)
+		(at p5 hab0)
+		(at p6 hab2)
+		(at p7 hab2)
+		(vacio r1)
+		(vacio r2)
+		(nivelbateria r1 f2)
+		(nivelbateria r2 f2)
+		(cambio f2 f1)
+		(cambio f1 f0)
+		(cambio f0 f2)
+		(conectada hab0 hab1)
+		(conectada hab1 hab0)
+		(conectada hab2 hab1)
+		(conectada hab1 hab2)
+		(conectada hab2 hab3)
+		(conectada hab3 hab2)
+		(conectada hab3 hab4)
+		(conectada hab4 hab3)
+	)
+	(:goal (and
+		(at p6 hab0)
+		(at p7 hab1)
+		(at p1 hab2)
+		(at p2 hab2)
+		(at p3 hab2)
+		(at p4 hab2)
+		(at p5 hab2)
+		(at r1 hab2)
+		(at r2 hab4)
+		)
+	)
+
+)
